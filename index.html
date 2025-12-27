@@ -12,7 +12,7 @@
   
   <!-- HERO -->
   <section class="hero">
-    <img src="IMG_20250901_144442_107.webp" alt="My Photo" class="profile">
+    <img src="my.webp" alt="My Photo" class="profile">
     <h1>Hello, I’m <span>Bereket Getu</span></h1>
     <h2><span id="typing"></span></h2>
     <p class="intro">
@@ -84,7 +84,7 @@
     <h2>Contact Me</h2>
     
     <div class="contact-links">
-      <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank">Telegram</a>
+      <a href="https://t.me/@TheB8R" target="_blank">Telegram</a>
       <a href="https://x.com/YOUR_X_USERNAME" target="_blank">X</a>
       <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank">Instagram</a>
       <a href="https://facebook.com/YOUR_FACEBOOK_USERNAME" target="_blank">Facebook</a>
@@ -92,21 +92,39 @@
   </section>
   
   <!-- FEEDBACK -->
-  <section class="section reveal">
-    <h2>Send Feedback</h2>
-    
-    <form action="https://formspree.io/f/FORM_ID_HERE" method="POST" class="feedback">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Feedback</button>
-    </form>
-    
-    <p class="note">
-      Feedback messages are sent directly to
-      <strong>bereketgetu77@gmail.com</strong>
-    </p>
-  </section>
+  
+<section class="section reveal">
+  <h2>Send Feedback</h2>
+
+  <form class="feedback" onsubmit="sendEmail(event)">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Feedback</button>
+  </form>
+
+  <p class="note">
+    Feedback messages are sent directly to
+    <strong>bereketgetu77@gmail.com</strong>
+  </p>
+</section>
+
+<script>
+function sendEmail(e) {
+  e.preventDefault(); // prevent default form submission
+  const form = e.target;
+  const name = form.name.value;
+  const email = form.email.value;
+  const message = form.message.value;
+
+  // Create mailto link
+  const mailtoLink = `mailto:bereketgetu77@gmail.com?subject=Feedback from ${name}&body=Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+
+  // Open default mail client
+  window.location.href = mailtoLink;
+}
+</script>
+
   
   <!-- FOOTER -->
   <footer>
