@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>About Me | Bereket Getu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <!-- HERO -->
+  <section class="hero">
+    <img src="my.webp" alt="My Photo" class="profile">
+    <h1>Hello, I’m <span>Bereket Getu</span></h1>
+    <h2><span id="typing"></span></h2>
+    <p class="intro">
+      I’m a 16-year-old frontend developer building modern, responsive,
+      and animated websites.
+    </p>
+  </section>
+  
+  <!-- ABOUT -->
+  <section class="section reveal">
+    <h2>About Me</h2>
+    <p>
+      I am a student and self-taught frontend developer. I focus on creating
+      clean UI, smooth animations, and mobile-friendly websites using
+      HTML, CSS, and JavaScript.
+    </p>
+  </section>
+  
+  <!-- SERVICES & PRICES -->
+  <section class="section reveal">
+    <h2>Services & Prices</h2>
+    
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>HTML Only</h3>
+        <p>Basic website structure</p>
+        <span>$10 – $20</span>
+      </div>
+      
+      <div class="price-card">
+        <h3>HTML + CSS</h3>
+        <p>Responsive design & animations</p>
+        <span>$25 – $40</span>
+      </div>
+      
+      <div class="price-card">
+        <h3>JavaScript Features</h3>
+        <p>Interactivity & effects</p>
+        <span>$15 – $30</span>
+      </div>
+      
+      <div class="price-card highlight">
+        <h3>Full Package</h3>
+        <p>HTML + CSS + JavaScript</p>
+        <span>$50 – $80</span>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SUPPORT / PAYMENT -->
+  <section class="section reveal">
+    <h2>Support & Payment</h2>
+    <p>
+      If you like my work, you can support me or contact me to discuss
+      other payment methods.
+    </p>
+    
+    <div class="support-box">
+      <p><strong>Ethiopia:</strong></p>
+      <p>📱 Telebirr: <strong>0978859589</strong></p>
+      
+      <p><strong>Other Countries:</strong></p>
+      <p>Contact me using the links below 👇</p>
+    </div>
+  </section>
+  
+  <!-- CONTACT LINKS -->
+  <section class="section reveal">
+    <h2>Contact Me</h2>
+    
+    <div class="contact-links">
+      <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank">Telegram</a>
+      <a href="https://x.com/YOUR_X_USERNAME" target="_blank">X</a>
+      <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank">Instagram</a>
+      <a href="https://facebook.com/YOUR_FACEBOOK_USERNAME" target="_blank">Facebook</a>
+    </div>
+  </section>
+  
+  <!-- FEEDBACK -->
+  <section class="section reveal">
+    <h2>Send Feedback</h2>
+    
+    <form action="https://formspree.io/f/FORM_ID_HERE" method="POST" class="feedback">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Feedback</button>
+    </form>
+    
+    <p class="note">
+      Feedback messages are sent directly to
+      <strong>bereketgetu77@gmail.com</strong>
+    </p>
+  </section>
+  
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Bereket Getu | Frontend Developer</p>
+  </footer>
+  
+  <script>
+    /* Typing Effect */
+    const words = ["Frontend Developer", "Student", "Web Designer"];
+    let w = 0,
+      l = 0;
+    
+    function typing() {
+      if (w === words.length) w = 0;
+      document.getElementById("typing").textContent =
+        words[w].slice(0, ++l);
+      if (l > words[w].length) {
+        setTimeout(() => { l = 0;
+          w++; }, 1200);
+      }
+      setTimeout(typing, 120);
+    }
+    typing();
+    
+    /* Scroll Reveal */
+    const reveals = document.querySelectorAll(".reveal");
+    window.addEventListener("scroll", () => {
+      reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    });
+  </script>
+  
+</body>
+
+</html>
